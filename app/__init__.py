@@ -43,7 +43,7 @@ if not app.debug:
             stream_handler = logging.StreamHandler()
             stream_handler.setLevel(logging.INFO)
             app.logger.addHandler(stream_handler)
-        else:
+    else:
             if not os.path.exists('logs'):
                 os.mkdir('logs')
             file_handler = RotatingFileHandler('logs/microblog.log',
@@ -54,8 +54,8 @@ if not app.debug:
             file_handler.setLevel(logging.INFO)
             app.logger.addHandler(file_handler)
 
-        app.logger.setLevel(logging.INFO)
-        app.logger.info('Microblog startup')
+    app.logger.setLevel(logging.INFO)
+    app.logger.info('Microblog startup')
 
 
 from app import routes, models, errors
